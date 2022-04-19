@@ -25,8 +25,8 @@ body {
     font-weight: bold;
     line-height: 34px;
     height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
+    margin-right: 6px;
+    margin-top: 6px;
     padding: 0;
     text-align: center;
     width: 34px;
@@ -34,6 +34,28 @@ body {
   
   .square:focus {
     outline: none;
+  }
+
+  .square {
+    background: hsl(340deg 100% 32%);
+    border-radius: 4px;
+    /* border: none; */
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+  }
+  .front {
+    display: block;
+    /* padding: 12px 42px; */
+    border-radius: 5px;
+    font-size: 1.25rem;
+    background: hsl(345deg 100% 47%);
+    color: white;
+    transform: translateY(-6px);
+  }
+
+  .square:active .front {
+    transform: translateY(-2px);
   }
   
   .kbd-navigation .square:focus {
