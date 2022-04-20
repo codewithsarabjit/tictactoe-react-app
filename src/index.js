@@ -7,7 +7,7 @@ function Square(props){
     <button 
       className="square" 
       onClick={props.onClick}>
-      <span class="front">
+      <span className="front">
         {props.value}
       </span>
     </button>
@@ -59,9 +59,11 @@ class Game extends React.Component {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
+    
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
+    
     squares[i] = this.state.xIsNext ? 'X' : 'O';
     this.setState({
       history: history.concat([{
@@ -93,9 +95,12 @@ class Game extends React.Component {
       );
     });
 
+    let movesLeft = current.squares.filter((v)=>v==null).length;
     let status;
     if (winner) {
       status = 'Winner: ' + winner;
+    } else if (movesLeft === 0) {
+      status = 'Draw';
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
