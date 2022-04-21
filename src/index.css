@@ -71,3 +71,10 @@ body {
     margin-left: 20px;
   }
   
+  .front.highlighted {
+    background: orange;
+    color: black;
+  }
+  .bold{
+    font-weight: bold;
+  }
