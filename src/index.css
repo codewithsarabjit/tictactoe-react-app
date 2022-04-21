@@ -63,12 +63,14 @@ body {
   }
   
   .game {
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
+    margin: 0 auto;
+    width: 30%;
   }
   
   .game-info {
-    margin-left: 20px;
+    margin-top: 50px;
   }
   
   .front.highlighted {
