@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-
+ 
 function Square(props){
   return (
     <button 
@@ -18,20 +18,39 @@ class Board extends React.Component {
     return <Square 
       value={this.props.squares[i]} 
       id={i} 
+      key={i} 
       highlighted={this.props.highlighted} 
       onClick={()=>this.props.onClick(i)}  
     />;
   }
 
   render() {
+    // let j = 1;
+    // const boardSquares = this.props.squares.map((i, v) => (
+    //   this.renderSquare(v)
+    //   +
+    //   ((j%3==0) ? '</div><div className="board-row">' : '')
+    // ))
+    //   console.log(boardSquares);
+      // boardSquares.push(this.renderSquare(v) + ((j%3==0) ? '</div><div className="board-row">' : ''));
+      // j++;
+    let thisObj = this;
+    let j = 0;
     return (
       <div>
+        {/* <div className="board-row">
+          {boardSquares}
+        </div> */}
         <div className="board-row">
-          {this.renderSquare(0)}
+          {this.props.squares.map(function(name, index){
+            return thisObj.renderSquare(index);
+          })}
+          {/* {this.renderSquare(0)}
           {this.renderSquare(1)}
-          {this.renderSquare(2)}
+          {this.renderSquare(2)} */}
+          {/* {(j%3==0) ? `</div><div className="board-row">` : ``} */}
         </div>
-        <div className="board-row">
+        {/* <div className="board-row">
           {this.renderSquare(3)}
           {this.renderSquare(4)}
           {this.renderSquare(5)}
@@ -40,7 +59,7 @@ class Board extends React.Component {
           {this.renderSquare(6)}
           {this.renderSquare(7)}
           {this.renderSquare(8)}
-        </div>
+        </div> */}
       </div>
     );
   }
