@@ -44,14 +44,12 @@ body {
   .square {
     background: hsl(0deg 39% 56%);
     border-radius: 4px;
-    /* border: none; */
     padding: 0;
     cursor: pointer;
     outline-offset: 4px;
   }
   .front {
     display: block;
-    /* padding: 12px 42px; */
     border-radius: 5px;
     font-size: 1.25rem;
     background: hsl(0deg 68% 76%);
@@ -71,7 +69,6 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: #dfe6e9;
-    /* color: #fff; */
   }
   
   .game {
@@ -79,15 +76,6 @@ body {
     position: absolute;
     top: 20px;
     left: 45%;
-  }
-  @media only screen and (max-width:500px) {
-    .game {
-      /* width: 100vw; */
-    }
-    .board-row{
-      /* margin: 0 auto;
-    width: 45vw; */
-    }
   }
   ol li button{
     background: #e3979f;
