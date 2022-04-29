@@ -88,11 +88,9 @@ body {
   ol li{
     margin-bottom:10px;
   }
-  
   .game-info {
     margin-top: 20px;
   }
-  
   .front.highlighted {
     background: hsl(74deg 27% 53%);
     color: #fff;
