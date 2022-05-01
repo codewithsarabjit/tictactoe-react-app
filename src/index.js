@@ -45,7 +45,7 @@ class Board extends React.Component {
           {/* {this.props.squares.map(function(name, index){
             let html = thisObj.renderSquare(index);
             {html += j%3===0 ?'</div><div className="board-row">' : ''}
-            j++;
+            j++; 
             return html;
           })} */}
           {this.renderSquare(0)}
