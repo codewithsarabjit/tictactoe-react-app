@@ -25,33 +25,12 @@ class Board extends React.Component {
   }
 
   render() {
-    // let j = 1;
-    // const boardSquares = this.props.squares.map((i, v) => (
-    //   this.renderSquare(v)
-    //   +
-    //   ((j%3==0) ? '</div><div className="board-row">' : '')
-    // ))
-    //   console.log(boardSquares);
-      // boardSquares.push(this.renderSquare(v) + ((j%3==0) ? '</div><div className="board-row">' : ''));
-      // j++;
-    let thisObj = this;
-    let j = 0;
     return (
-      <div>
-        {/* <div className="board-row">
-          {boardSquares}
-        </div> */}
+      <div className="game-board">
         <div className="board-row">
-          {/* {this.props.squares.map(function(name, index){
-            let html = thisObj.renderSquare(index);
-            {html += j%3===0 ?'</div><div className="board-row">' : ''}
-            j++; 
-            return html;
-          })} */}
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
-          
         </div>
         <div className="board-row">
           {this.renderSquare(3)}
@@ -111,15 +90,12 @@ class Game extends React.Component {
     winner = (winner!=null) ? current.squares[winner[0]] : winner;
 
     const moves = history.map((step, move) => {
-      if (move==0) {
-        return null;
-      }
       const desc = move ?
         'Move #' + move :
-        'Goto Game Start';
+        'Game Start';
       return (
         <li key={move}>
-          <a href="javascript:;" className={`${move===this.state.stepNumber ? 'active' : ''} game-links`} onClick={() => this.jumpTo(move)}>{desc}</a>
+          <span className={`${move===this.state.stepNumber ? 'active' : ''} game-links`} onClick={() => this.jumpTo(move)}>{desc}</span>
         </li>
       );
     });
@@ -137,27 +113,20 @@ class Game extends React.Component {
       <div className="game-container">
         <div className="title">Tic Tac Toe<br/> Game</div>
         <div className="game">
-          <div className="game-board">
-            <Board
-              squares={current.squares}
-              highlighted={highlighted}
-              onClick={(i) => this.handleClick(i)}
-            />
-          </div>
+          <Board
+            squares={current.squares}
+            highlighted={highlighted}
+            onClick={(i) => this.handleClick(i)}
+          />
           <div className="game-info">
-            <div className='board-row'>
-              <div>{status}</div>
-              <button className="game-start-btn">Goto Game Start</button>
-              <ol>{moves}</ol>
-            </div>
+            <button className="game-start-btn">{status}</button>
+            <ol>{moves}</ol>
           </div>
         </div>
       </div>
     );
   }
 }
-
-// ========================================
 
 ReactDOM.render(
   <Game />,
@@ -178,7 +147,6 @@ function calculateWinner(squares) {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      // return squares[a];
       return lines[i];
     }
   }
