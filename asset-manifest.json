@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/tictactoe-react-app/static/css/main.b77eb991.css",
-    "main.js": "/tictactoe-react-app/static/js/main.ed4792a4.js",
+    "main.css": "/tictactoe-react-app/static/css/main.82f2e6af.css",
+    "main.js": "/tictactoe-react-app/static/js/main.e0b59452.js",
+    "static/media/background.png": "/tictactoe-react-app/static/media/background.78c324f81e0bae2af89f.png",
     "index.html": "/tictactoe-react-app/index.html",
-    "main.b77eb991.css.map": "/tictactoe-react-app/static/css/main.b77eb991.css.map",
-    "main.ed4792a4.js.map": "/tictactoe-react-app/static/js/main.ed4792a4.js.map"
+    "main.82f2e6af.css.map": "/tictactoe-react-app/static/css/main.82f2e6af.css.map",
+    "main.e0b59452.js.map": "/tictactoe-react-app/static/js/main.e0b59452.js.map"
   },
   "entrypoints": [
-    "static/css/main.b77eb991.css",
-    "static/js/main.ed4792a4.js"
+    "static/css/main.82f2e6af.css",
+    "static/js/main.e0b59452.js"
   ]
 }
